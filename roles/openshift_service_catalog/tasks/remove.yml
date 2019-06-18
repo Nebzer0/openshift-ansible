@@ -46,7 +46,7 @@
     kind: deployment
     name: controller-manager
 
-- name: Remove Service Catalog kube-system Role Bindinds
+- name: Remove Service Catalog kube-system Role Bindings
   shell: >
     {{ openshift_client_binary }} --config=/etc/origin/master/admin.kubeconfig process kube-system-service-catalog-role-bindings -n kube-system | {{ openshift_client_binary }} --config=/etc/origin/master/admin.kubeconfig delete --ignore-not-found -f -
 
@@ -56,7 +56,7 @@
     namespace: kube-system
     state: absent
 
-- name: Remove Service Catalog kube-service-catalog Role Bindinds
+- name: Remove Service Catalog kube-service-catalog Role Bindings
   shell: >
     {{ openshift_client_binary }} --config=/etc/origin/master/admin.kubeconfig process service-catalog-role-bindings -n kube-service-catalog | {{ openshift_client_binary }} --config=/etc/origin/master/admin.kubeconfig delete --ignore-not-found -f -
 
